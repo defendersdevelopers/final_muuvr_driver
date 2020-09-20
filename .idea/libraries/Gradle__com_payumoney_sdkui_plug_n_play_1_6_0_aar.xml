@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.payumoney.sdkui:plug-n-play:1.6.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a19e4818d999adc272095164c1007058/jetified-plug-n-play-1.6.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a19e4818d999adc272095164c1007058/jetified-plug-n-play-1.6.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a19e4818d999adc272095164c1007058/jetified-plug-n-play-1.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/818c6c2ef6dd9b0485b87ac383a5faa1/jetified-plug-n-play-1.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/818c6c2ef6dd9b0485b87ac383a5faa1/jetified-plug-n-play-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/818c6c2ef6dd9b0485b87ac383a5faa1/jetified-plug-n-play-1.6.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.payumoney.sdkui/plug-n-play/1.6.0/a291453a1d28f60ad82beeace09cbec22ba480b9/plug-n-play-1.6.0-javadoc.jar!/" />

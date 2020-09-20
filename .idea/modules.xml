@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="ourdriverapp/app" />
-      <module fileurl="file://$PROJECT_DIR$/ourdriverapp.iml" filepath="$PROJECT_DIR$/ourdriverapp.iml" group="ourdriverapp" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="final_muuvr_driver/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/final_muuvr_driver.iml" filepath="$PROJECT_DIR$/.idea/modules/final_muuvr_driver.iml" group="final_muuvr_driver" />
     </modules>
   </component>
 </project>
