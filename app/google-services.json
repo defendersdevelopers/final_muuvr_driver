@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "830123989466",
+    "firebase_url": "https://maindatabase-43ecb.firebaseio.com",
+    "project_id": "maindatabase-43ecb",
+    "storage_bucket": "maindatabase-43ecb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830123989466:android:7599213f5830ece4b988e3",
+        "android_client_info": {
+          "package_name": "com.defenders.muuvrcus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830123989466-psii6rdojajdnidv8g7f80eiuvt1cfu4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.defenders.muuvrcus",
+            "certificate_hash": "8d084fbc163ee63da300c606939e641bf4ffc325"
+          }
+        },
+        {
+          "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-jIsGJk6Qyw6cYt6OgelVnRbXb-KOeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830123989466:android:4da0864b9cb41512b988e3",
+        "android_client_info": {
+          "package_name": "com.defenders.muuvrdri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-jIsGJk6Qyw6cYt6OgelVnRbXb-KOeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830123989466:android:818e3b6f2007af48b988e3",
+        "android_client_info": {
+          "package_name": "com.defenders.muuvrdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-jIsGJk6Qyw6cYt6OgelVnRbXb-KOeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830123989466:android:5cd31eb8c8fbd1e5b988e3",
+        "android_client_info": {
+          "package_name": "com.defenders.muuvrmain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830123989466-390t4jmnmre47fs6ql3jq8ji49lpkoi7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.defenders.muuvrmain",
+            "certificate_hash": "8d084fbc163ee63da300c606939e641bf4ffc325"
+          }
+        },
+        {
+          "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-jIsGJk6Qyw6cYt6OgelVnRbXb-KOeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830123989466-r9qikrnnju81eb2oh8m35sjrdhgailjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
