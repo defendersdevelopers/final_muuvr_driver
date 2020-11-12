@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by Ourdevelops Team on 3/24/2019.
- */
+
 
 public class BanklistItem extends RecyclerView.Adapter<BanklistItem.ItemRowHolder> {
 

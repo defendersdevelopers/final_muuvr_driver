@@ -28,9 +28,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public class ServiceGenerator {
     private static BooleanSerializerDeserializer booleanSerializerDeserializer = new BooleanSerializerDeserializer();

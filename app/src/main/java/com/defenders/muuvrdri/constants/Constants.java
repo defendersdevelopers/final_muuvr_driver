@@ -3,9 +3,7 @@ package com.defenders.muuvrdri.constants;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/**
- * Created by ourdevelops Team on 10/23/2020.
- */
+
 
 public class Constants {
 

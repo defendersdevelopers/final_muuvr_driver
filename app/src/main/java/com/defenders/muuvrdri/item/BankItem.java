@@ -19,9 +19,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by otacodes on 3/24/2019.
- */
+
 
 public class BankItem extends RecyclerView.Adapter<BankItem.ItemRowHolder> {
 

@@ -10,11 +10,7 @@ import android.telephony.TelephonyManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * The type Network utils.
- *
- * @author Nishant Srivastava
- */
+
 public class NetworkUtils {
 
     /**

@@ -9,9 +9,7 @@ import com.defenders.muuvrdri.models.TransaksiModel;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ourdevelops Team on 10/19/2019.
- */
+
 
 public class DetailTransResponseJson {
 

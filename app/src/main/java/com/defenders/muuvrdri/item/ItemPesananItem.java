@@ -14,9 +14,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by ourdevelops team on 3/24/2019.
- */
+
 
 public class ItemPesananItem extends RecyclerView.Adapter<ItemPesananItem.ItemRowHolder> {
 

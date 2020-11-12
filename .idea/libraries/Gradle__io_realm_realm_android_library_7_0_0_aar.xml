@@ -1,9 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: io.realm:realm-android-library:7.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef6733c5cadaff80c143581864d9f870/jetified-realm-android-library-7.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef6733c5cadaff80c143581864d9f870/jetified-realm-android-library-7.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef6733c5cadaff80c143581864d9f870/jetified-realm-android-library-7.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/601fb2ce98e88969509ef9cef7591643/jetified-realm-android-library-7.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/601fb2ce98e88969509ef9cef7591643/jetified-realm-android-library-7.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/601fb2ce98e88969509ef9cef7591643/jetified-realm-android-library-7.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01c9f253b1cb6c39796e56a3248716fc/jetified-realm-android-library-7.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01c9f253b1cb6c39796e56a3248716fc/jetified-realm-android-library-7.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01c9f253b1cb6c39796e56a3248716fc/jetified-realm-android-library-7.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38269761d3bfc15a32f49ab7f87fd2dc/jetified-realm-android-library-7.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38269761d3bfc15a32f49ab7f87fd2dc/jetified-realm-android-library-7.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38269761d3bfc15a32f49ab7f87fd2dc/jetified-realm-android-library-7.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.realm/realm-android-library/7.0.0/738cbc8ecd03789520928463a0428b19c05f3b52/realm-android-library-7.0.0-javadoc.jar!/" />

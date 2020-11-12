@@ -7,9 +7,7 @@ import java.io.Serializable;
 
 import io.realm.RealmObject;
 
-/**
- * Created by Ourdevelops Team on 12/20/2019.
- */
+
 
 public class WalletModel extends RealmObject implements Serializable {
 

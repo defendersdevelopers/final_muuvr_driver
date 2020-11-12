@@ -7,9 +7,7 @@ import java.io.Serializable;
 
 import io.realm.RealmObject;
 
-/**
- * Created by Ourdevelops Team on 10/17/2019.
- */
+
 
 public class PelangganModel extends RealmObject implements Serializable{
 

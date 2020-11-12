@@ -84,4 +84,13 @@
         <item>Car</item>
     </string-array>
 
+    <string name="developer_mission">\nBeing professional web development, mobile application and graphic designing company. Our mission is to provide customer-centric, result-oriented, cost-competitive innovative &amp; functional IT Solutions to our valuable global clients. We stick to the following principles in delivering our mission:\n\n
+
+ 1.We understand needs and requirements of our customer and make technology to resolve the needs\n\n
+ 2.We believe to explore new opportunities that maximizes the business value, consistent growth and sustainability\n\n
+ 3.Empower our clients to respond faster and more intuitively to changing market dynamics\n\n
+ 4.Enable them to become more agile and competitive through leveraging new technologies\n\n
+ 5.Help our clients to bring great products to market in less time and at less cost\n\n
+ 6.Collaborate with our clients in their continued success.\n</string>
+
 </resources>

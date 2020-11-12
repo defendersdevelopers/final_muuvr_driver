@@ -24,9 +24,7 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by otacodes on 3/24/2019.
- */
+
 
 public class HistoryItem extends RecyclerView.Adapter<HistoryItem.ItemRowHolder> {
 

@@ -17,9 +17,7 @@ import org.jsoup.Jsoup;
 import java.io.IOException;
 import java.util.Objects;
 
-/**
- * Created by ourdevelops on 12/4/2018.
- */
+
 
 
 public class VersionChecker extends AsyncTask<String, String, String> {

@@ -32,6 +32,7 @@ import android.widget.Toast;
 
 import com.defenders.muuvrdri.BuildConfig;
 import com.defenders.muuvrdri.R;
+import com.defenders.muuvrdri.activity.AboutDevelopers;
 import com.defenders.muuvrdri.activity.ChangepassActivity;
 import com.defenders.muuvrdri.activity.EditKendaraanActivity;
 import com.defenders.muuvrdri.activity.EditProfileActivity;
@@ -82,6 +83,7 @@ public class ProfileFragment extends Fragment {
         LinearLayout logout = getView.findViewById(R.id.lllogout);
         LinearLayout llpassword = getView.findViewById(R.id.llpassword);
         LinearLayout llkendaraan = getView.findViewById(R.id.llkendaraan);
+        LinearLayout llaboutdevelopers = getView.findViewById(R.id.llaboutdevelopers);
         rlprogress = getView.findViewById(R.id.rlprogress);
         TextView rate = getView.findViewById(R.id.rate);
         sp = new SettingPreference(context);
@@ -122,6 +124,16 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 aboutus();
+            }
+        });
+
+        llaboutdevelopers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, AboutDevelopers.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+
             }
         });
 

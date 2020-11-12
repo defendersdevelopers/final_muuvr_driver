@@ -3,7 +3,10 @@ package com.defenders.muuvrdri.utils.api.service;
 import com.defenders.muuvrdri.json.AcceptRequestJson;
 import com.defenders.muuvrdri.json.AcceptResponseJson;
 import com.defenders.muuvrdri.json.BankResponseJson;
+import com.defenders.muuvrdri.json.BiddingDriversResponseJson;
 import com.defenders.muuvrdri.json.BiddingResponseJson;
+import com.defenders.muuvrdri.json.BiddingResponseSingleJson;
+import com.defenders.muuvrdri.json.BiddingSingleDataResponseJson;
 import com.defenders.muuvrdri.json.ChangePassRequestJson;
 import com.defenders.muuvrdri.json.ConsentRequestJson;
 import com.defenders.muuvrdri.json.ConsentResponseJson;
@@ -32,15 +35,15 @@ import com.defenders.muuvrdri.json.WalletRequestJson;
 import com.defenders.muuvrdri.json.WalletResponseJson;
 import com.defenders.muuvrdri.json.WithdrawRequestJson;
 import com.defenders.muuvrdri.json.WithdrawResponseJson;
+import com.defenders.muuvrdri.json.idJson;
+import com.defenders.muuvrdri.json.setBiddingJson;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public interface DriverService {
 
@@ -120,4 +123,27 @@ public interface DriverService {
 
     @GET("driver/fetch_biddings")
     Call<BiddingResponseJson> fetchBidding();
+
+    @POST("driver/set_bidding")
+    Call<String> setBidding(@Body setBiddingJson param);
+
+
+    @POST("driver/check_bidding")
+    Call<BiddingSingleDataResponseJson> checkBidding(@Body idJson param);
+
+    @POST("pelanggan/fetch_biddings")
+    Call<BiddingResponseSingleJson> fetchBiddingDetails(@Body idJson param);
+
+    @POST("pelanggan/fetch_bidding_drivers")
+    Call<BiddingDriversResponseJson> fetchBiddingDrivers(@Body idJson param);
+
+
+    @POST("driver/fetch_user_token")
+    Call<String> fetchUserToken(@Body idJson param);
+
+    @POST("driver/delete_bidding")
+    Call<String> deleteBidding(@Body idJson param);
+
+    @POST("pelanggan/delete_bidding")
+    Call<String> deleteBidding2(@Body idJson param);
 }

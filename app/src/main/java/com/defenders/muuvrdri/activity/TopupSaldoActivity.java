@@ -116,11 +116,6 @@ public class TopupSaldoActivity extends AppCompatActivity {
 
         nominal.addTextChangedListener(Utility.currencyTW(nominal,this));
 
-        if (sp.getSetting()[10].equals("1")) {
-            paypal.setVisibility(View.VISIBLE);
-        } else {
-            paypal.setVisibility(View.GONE);
-        }
 
         if (sp.getSetting()[11].equals("1")) {
            // creditcard.setVisibility(View.VISIBLE);
@@ -142,7 +137,6 @@ public class TopupSaldoActivity extends AppCompatActivity {
                 if (!nominal.getText().toString().isEmpty()) {
                     launchPayUMoneyFlow();
                 } else {
-
                     notif("nominal cant be empty!");
                 }
             }
@@ -250,7 +244,7 @@ public class TopupSaldoActivity extends AppCompatActivity {
                 .replaceAll(sp.getSetting()[4], ""))
                 .replaceAll(" ", ""))
                 .replaceAll(",", ""))
-                .replaceAll("[$.]", ""));
+                .replaceAll("[₹.]", ""));
     }
 
     private void sheetlist() {
@@ -403,9 +397,9 @@ public class TopupSaldoActivity extends AppCompatActivity {
     private void launchPayUMoneyFlow() {
         PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
         payUmoneyConfig.setDoneButtonText("done");
-        Double Amount = Double.valueOf(convertAngka(nominal.getText().toString().replace(sp.getSetting()[4],"")));
-        DecimalFormat formatter = new DecimalFormat("#,############,##");
-        paymentAmount = formatter.format(Amount);
+        Double Amount = Double.valueOf(nominal.getText().toString().replace(sp.getSetting()[4], ""));
+        //DecimalFormat formatter = new DecimalFormat("#,############,##");
+        paymentAmount = Amount+"";
         String payment = String.valueOf(new BigDecimal(paymentAmount));
 
         payUmoneyConfig.setPayUmoneyActivityTitle(getString(R.string.app_name));

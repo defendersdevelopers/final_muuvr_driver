@@ -17,9 +17,7 @@ import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-/**
- * Created by Ourdevelops Team on 10/16/2019.
- */
+
 
 public class MapDirectionAPI {
 

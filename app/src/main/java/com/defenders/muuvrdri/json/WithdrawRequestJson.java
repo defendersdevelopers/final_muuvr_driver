@@ -3,9 +3,7 @@ package com.defenders.muuvrdri.json;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public class WithdrawRequestJson {
 

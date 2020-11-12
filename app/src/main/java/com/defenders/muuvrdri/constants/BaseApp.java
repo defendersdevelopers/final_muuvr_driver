@@ -33,9 +33,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public class BaseApp extends Application {
 

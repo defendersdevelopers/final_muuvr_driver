@@ -55,13 +55,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Nama Lengkap"
+                            android:text=""
                             android:textAllCaps="false"
                             android:textColor="@color/black"
                             android:textSize="18dp" />
 
                         <customfonts.TextViewSFProDisplayRegular
                             android:id="@+id/useremail"
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -198,7 +199,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_vehicle" />
+                        android:src="@drawable/vehicle" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -239,7 +240,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/logo" />
+                        android:src="@drawable/ic_aboutus" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -254,6 +255,39 @@
                             android:layout_marginRight="10dp"
                             android:gravity="center_vertical"
                             android:text="About Us"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llaboutdevelopers"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_developers" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <customfonts.TextViewSFProDisplayMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="About Developers"
                             android:textColor="@color/black"
                             android:textSize="15dp" />
 
@@ -279,7 +313,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_privacylist" />
+                        android:src="@drawable/ic_privacy" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -319,7 +353,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_sharelist" />
+                        android:src="@drawable/ic_share" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -359,7 +393,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_ratelist" />
+                        android:src="@drawable/ic_rate" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -401,7 +435,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_logoutlist" />
+                        android:src="@drawable/ic_logout" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

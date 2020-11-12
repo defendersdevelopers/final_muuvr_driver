@@ -2,9 +2,7 @@ package com.defenders.muuvrdri.models;
 
 import io.realm.RealmObject;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public class FirebaseToken extends RealmObject {
     private String tokenId;

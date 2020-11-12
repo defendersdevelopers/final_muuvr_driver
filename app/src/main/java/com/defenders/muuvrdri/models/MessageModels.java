@@ -1,8 +1,6 @@
 package com.defenders.muuvrdri.models;
 
-/**
- * Created by otacodes on 9/11/2018.
- */
+
 
 public class MessageModels {
 

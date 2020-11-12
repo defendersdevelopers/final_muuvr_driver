@@ -6,9 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ourdevelops Team on 10/13/2019.
- */
+
 
 public class WithdrawResponseJson {
 

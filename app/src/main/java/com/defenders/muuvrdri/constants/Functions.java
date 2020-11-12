@@ -5,9 +5,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import java.util.Objects;
 
-/**
- * Created by Ourdevelops Team on 10/20/2018.
- */
+
 
 public class Functions {
 

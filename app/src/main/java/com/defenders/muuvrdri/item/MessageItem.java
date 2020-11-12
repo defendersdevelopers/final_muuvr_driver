@@ -26,9 +26,6 @@ import java.util.Objects;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by ourdevelops on 11/20/2020.
- */
 
 public class MessageItem extends RecyclerView.Adapter<MessageItem.CustomViewHolder> implements Filterable {
     public Context context;

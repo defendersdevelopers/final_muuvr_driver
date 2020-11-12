@@ -33,6 +33,7 @@ import android.widget.Toast;
 import com.defenders.muuvrdri.json.ConsentRequestJson;
 import com.defenders.muuvrdri.json.ConsentResponseJson;
 import com.defenders.muuvrdri.json.FinishRequestJson;
+import com.defenders.muuvrdri.json.idJson;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -88,6 +89,7 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -278,6 +280,7 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
         param.setId(idtrans);
         param.setIdPelanggan(idpelanggan);
         service.detailtrans(param).enqueue(new Callback<DetailTransResponseJson>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(@NonNull Call<DetailTransResponseJson> call, @NonNull Response<DetailTransResponseJson> responsedata) {
@@ -366,10 +369,17 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
                                     @Override
                                     public void onClick(View v) {
                                         if(btnSubmitConsentLetter.getText().toString().equals("Upload")){
-                                            if (check_ReadStoragepermission()) {
-                                                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                                                startActivityForResult(intent, 1);
-                                            }
+                                                if (context.checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+                                                {
+                                                    requestPermissions(new String[]{Manifest.permission.CAMERA}, 2);
+                                                }
+                                                else
+                                                {
+                                                    Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                                                    startActivityForResult(intent, 1);
+                                                }
+
+
                                         }
                                         else{
                                             ProgressDialog pd = new ProgressDialog(getContext());
@@ -389,7 +399,7 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
                                                     if(response.isSuccessful()){
                                                         pd.dismiss();
                                                        dialog.dismiss();
-                                                        Toast.makeText(getContext(),response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getContext(),response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                                         consentImageName = response.body().getMessage();
                                                         if(!consentImageName.equals("")) {
                                                             finish(pelanggan, transaksi.token_merchant);
@@ -588,6 +598,25 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
 
 
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 2)
+        {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(context, "camera permission granted", Toast.LENGTH_LONG).show();
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, 1);
+            }
+            else
+            {
+                Toast.makeText(context, "camera permission denied", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 20, baos);
@@ -602,7 +631,7 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
         if (resultCode == RESULT_OK) {
 
             if (requestCode == 1) {
-                Uri selectedImage = data.getData();
+               /* Uri selectedImage = data.getData();
                 InputStream imageStream = null;
                 try {
                     imageStream = getContext().getContentResolver().openInputStream(Objects.requireNonNull(selectedImage));
@@ -639,8 +668,15 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos);
                 consentLetterImage.setImageBitmap(rotatedBitmap);
+
+
+                */
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                photo.compress(Bitmap.CompressFormat.JPEG, 20, baos);
                 imageByteArray = baos.toByteArray();
                 decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(baos.toByteArray()));
+                consentLetterImage.setImageBitmap(photo);
                 btnSubmitConsentLetter.setText("Submit");
             }
         }
@@ -663,24 +699,7 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
         return result;
     }
 
-    private boolean check_ReadStoragepermission() {
-        if (ContextCompat.checkSelfPermission(getContext(),
-                Manifest.permission.READ_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            try {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                            Constants.permission_Read_data);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                throw e;
-            }
-        }
-        return false;
-    }
+
 
     private void shimmerload() {
         shimmerlayanan.startShimmerAnimation();
@@ -722,6 +741,7 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
         priceText.setVisibility(View.VISIBLE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void parsedata(TransaksiModel request, final PelangganModel pelanggan) {
         requestRoute();
         final User loginUser = BaseApp.getInstance(context).getLoginUser();
@@ -995,23 +1015,35 @@ public class OrderFragment extends Fragment implements OnMapReadyCallback, Googl
             public void onResponse(@NonNull Call<AcceptResponseJson> call, @NonNull final Response<AcceptResponseJson> response) {
                 if (response.isSuccessful()) {
 
-                    Toast.makeText(context, response.body().getMessage()+"    "+response.body().getData(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, response.body().getData(), Toast.LENGTH_SHORT).show();
                     if (Objects.requireNonNull(response.body()).getMessage().equalsIgnoreCase("success")) {
-                        rlprogress.setVisibility(View.GONE);
-                        Intent i = new Intent(context, MainActivity.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(i);
-                        OrderFCM orderfcm = new OrderFCM();
-                        orderfcm.id_driver = loginUser.getId();
-                        orderfcm.id_transaksi = idtrans;
-                        orderfcm.response = "4";
-                        orderfcm.desc = getString(R.string.notification_finish);
-                        if (type.equals("4")) {
-                            sendMessageToDriver(tokenmerchant, orderfcm);
-                            sendMessageToDriver(pelanggan.getToken(), orderfcm);
-                        } else {
-                            sendMessageToDriver(pelanggan.getToken(), orderfcm);
-                        }
+                        idJson it = new idJson();
+                        it.setId(idpelanggan);
+                        userService.deleteBidding2(it).enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                    rlprogress.setVisibility(View.GONE);
+                                    Intent i = new Intent(context, MainActivity.class);
+                                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(i);
+                                    OrderFCM orderfcm = new OrderFCM();
+                                    orderfcm.id_driver = loginUser.getId();
+                                    orderfcm.id_transaksi = idtrans;
+                                    orderfcm.response = "4";
+                                    orderfcm.desc = getString(R.string.notification_finish);
+                                    if (type.equals("4")) {
+                                        sendMessageToDriver(tokenmerchant, orderfcm);
+                                        sendMessageToDriver(pelanggan.getToken(), orderfcm);
+                                    } else {
+                                        sendMessageToDriver(pelanggan.getToken(), orderfcm);
+                                    }
+                            }
+
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
+                            }
+                        });
+
 
                     } else {
                         rlprogress.setVisibility(View.GONE);

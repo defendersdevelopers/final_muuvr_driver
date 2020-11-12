@@ -1,9 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.payumoney.core:payumoney-sdk:7.6.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da03c120746dfa0ed95bc30de5c493da/jetified-payumoney-sdk-7.6.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da03c120746dfa0ed95bc30de5c493da/jetified-payumoney-sdk-7.6.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da03c120746dfa0ed95bc30de5c493da/jetified-payumoney-sdk-7.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/098e58adadf836141ac67b0b823e1e5f/jetified-payumoney-sdk-7.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/098e58adadf836141ac67b0b823e1e5f/jetified-payumoney-sdk-7.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/098e58adadf836141ac67b0b823e1e5f/jetified-payumoney-sdk-7.6.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/421e3ba9dc281a2a9e048b7d1dd7f8c3/jetified-payumoney-sdk-7.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/421e3ba9dc281a2a9e048b7d1dd7f8c3/jetified-payumoney-sdk-7.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/421e3ba9dc281a2a9e048b7d1dd7f8c3/jetified-payumoney-sdk-7.6.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01e8fd8c678086350a1a97b2a7ef2f1f/jetified-payumoney-sdk-7.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01e8fd8c678086350a1a97b2a7ef2f1f/jetified-payumoney-sdk-7.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01e8fd8c678086350a1a97b2a7ef2f1f/jetified-payumoney-sdk-7.6.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.payumoney.core/payumoney-sdk/7.6.0/cb3574cb5334749a5c29c87be7bb3089f7fc6c6c/payumoney-sdk-7.6.0-javadoc.jar!/" />

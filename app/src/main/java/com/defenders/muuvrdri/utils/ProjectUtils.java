@@ -40,9 +40,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/**
- * Created by otacodes on 27/12/2018.
- */
+
 public class ProjectUtils {
 
     public static final String TAG = "ProjectUtility";

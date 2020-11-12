@@ -23,9 +23,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-/**
- * Created by otacodes on 3/24/2019.
- */
+
 
 public class WalletItem extends RecyclerView.Adapter<WalletItem.ItemRowHolder> {
 

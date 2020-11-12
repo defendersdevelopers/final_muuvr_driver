@@ -56,6 +56,7 @@ public class EnableLlocationFragment extends Fragment {
         context = getContext();
 
 
+
         sharedPreferences = Objects.requireNonNull(context).getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
 
         Button enableLocation = getView.findViewById(R.id.enable_location_btn);

@@ -21,8 +21,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.defenders.muuvrdri.activity.AllBiddingActivity;
+import com.defenders.muuvrdri.activity.SingleBiddingActivity;
+import com.defenders.muuvrdri.json.BiddingSingleDataResponseJson;
+import com.defenders.muuvrdri.json.idJson;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -170,7 +174,39 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         btnBidding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), AllBiddingActivity.class));
+                User userLogin = BaseApp.getInstance(getContext()).getLoginUser();
+                final DriverService service = ServiceGenerator.createService(DriverService.class, userLogin.getEmail(), userLogin.getPassword());
+
+                idJson item = new idJson();
+                item.setId(userLogin.getId());
+
+                service.checkBidding(item).enqueue(new Callback<BiddingSingleDataResponseJson>() {
+                    @Override
+                    public void onResponse(Call<BiddingSingleDataResponseJson> call, Response<BiddingSingleDataResponseJson> response) {
+                        if(response.isSuccessful()){
+                            if(response.body().getMessage().equals("success")){
+                                Intent intent = new Intent(getContext(), SingleBiddingActivity.class);
+                                intent.putExtra("data",response.body().getData());
+                                startActivity(intent);
+                            }else{
+                                startActivity(new Intent(getContext(), AllBiddingActivity.class));
+                            }
+                        }
+                        else{
+                            Toast.makeText(context, "fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BiddingSingleDataResponseJson> call, Throwable t) {
+                        Toast.makeText(context, "error: "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+
+
             }
         });
 

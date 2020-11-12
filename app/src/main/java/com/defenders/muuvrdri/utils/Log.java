@@ -1,8 +1,6 @@
 package com.defenders.muuvrdri.utils;
 
-/**
- * Created by Ourdevelops Team on 12/6/2019.
- */
+
 
 public class Log {
     public static final boolean LOG = true;

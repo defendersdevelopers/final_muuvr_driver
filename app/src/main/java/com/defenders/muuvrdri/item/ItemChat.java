@@ -32,9 +32,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-/**
- * Created by otacodes on 12/12/2018.
- */
+
 
 public class ItemChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<ChatModels> mDataSet;

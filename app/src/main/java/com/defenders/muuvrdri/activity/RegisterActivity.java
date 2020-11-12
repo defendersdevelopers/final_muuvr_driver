@@ -252,7 +252,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-                final String emailvalidate = email.getText().toString();
+                final String emailvalidate = "dummy@mail.com";
+                email.setText(emailvalidate);//email.getText().toString();
 
                 if (imageByteArray == null) {
                     notif("please add photo!");
@@ -264,8 +265,6 @@ public class RegisterActivity extends AppCompatActivity {
                     notif(getString(R.string.emailempty));
                 } else if (TextUtils.isEmpty(tanggal.getText().toString())) {
                     notif("birthday cant be empty!");
-                } else if (!emailvalidate.matches(emailPattern)) {
-                    notif("wrong email format!");
                 } else if (gender.getSelectedItemPosition() == 0) {
                     notif("please select gender!");
                 } else if (job.getSelectedItemPosition() == 0) {

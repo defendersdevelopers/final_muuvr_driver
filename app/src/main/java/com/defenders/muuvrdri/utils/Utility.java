@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.Format;
 import java.util.Locale;
 
@@ -20,12 +21,13 @@ import java.util.Locale;
 public class Utility {
 
 
+
     public static TextWatcher currencyTW(final EditText editText, final Context context) {
         final SettingPreference sp = new SettingPreference(context);
         return new TextWatcher() {
+            private String current = "";
 
             @RequiresApi(api = Build.VERSION_CODES.N)
-            @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 editText.removeTextChangedListener(this);
@@ -40,47 +42,38 @@ public class Utility {
                     if (originalString.contains(",")) {
                         originalString = originalString.replaceAll(",", "");
                     }
-                    if (originalString.contains(sp.getSetting()[4]+" ")) {
-                        originalString = originalString.replaceAll(sp.getSetting()[4]+" ", "");
-                    }
                     if (originalString.contains(sp.getSetting()[4])) {
                         originalString = originalString.replaceAll(sp.getSetting()[4], "");
                     }
-                    if (originalString.contains(sp.getSetting()[4])) {
-                        originalString = originalString.replace(sp.getSetting()[4], "");
-                    }
-                    if (originalString.contains(sp.getSetting()[4])) {
-                        originalString = originalString.replace(sp.getSetting()[4], "");
-                    }
-                    if (originalString.contains(" ")) {
-                        originalString = originalString.replaceAll(" ", "");
-                    }
 
-                    longval = Long.parseLong(originalString);
-                  if (longval == 0) {
+                    String str2 = originalString.replace(" ", "");
+
+                    longval = Long.parseLong(str2);
+
+
+                    if (longval == 0) {
                         editText.setText("");
                         editText.setSelection(editText.getText().length());
                     } else if (String.valueOf(longval).length() == 1) {
-                        editText.setText(sp.getSetting()[4]+"0.0" + longval);
+                        editText.setText(sp.getSetting()[4]+"0.0" + String.valueOf(longval));
                         editText.setSelection(editText.getText().length());
                     } else if (String.valueOf(longval).length() == 2) {
-                        editText.setText(sp.getSetting()[4]+"0." + longval);
+                        editText.setText(sp.getSetting()[4]+"0." + String.valueOf(longval));
                         editText.setSelection(editText.getText().length());
                     } else {
+                        long deci = longval%100;
+                        longval = longval/100;
 
-                        SettingPreference sp = new SettingPreference(context);
-                        Format format = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
-                        Double getprice = Double.valueOf(longval);
-                      getprice = getprice/100;
-                        String formattedString = format.format(getprice);
-                        editText.setText(sp.getSetting()[4]+formattedString.replace("₹",""));
-
-                       // DecimalFormat formatter = new DecimalFormat("#,###.##");
-                       // String formattedString = formatter.format(longval);
-                       // editText.setText(sp.getSetting()[4] + formattedString.replace(",",","));
+                        if(String.valueOf(deci).length() == 0){
+                            editText.setText(sp.getSetting()[4]+longval+".0"+String.valueOf(deci));
+                        }
+                        else if(String.valueOf(deci).length() == 1){
+                            editText.setText(sp.getSetting()[4]+longval+".0"+deci);
+                        }else{
+                            editText.setText(sp.getSetting()[4]+longval+"."+deci);
+                        }
                         editText.setSelection(editText.getText().length());
                     }
-
                 } catch (NumberFormatException nfe) {
                     nfe.printStackTrace();
                 }
@@ -98,29 +91,40 @@ public class Utility {
         };
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @SuppressLint("SetTextI18n")
     public static void currencyTXT(TextView text, String nomninal, Context context) {
         SettingPreference sp = new SettingPreference(context);
-
         if (nomninal.length() == 1) {
             text.setText(sp.getSetting()[4]+"0.0" + nomninal);
         } else if (nomninal.length() == 2) {
             text.setText(sp.getSetting()[4]+"0." + nomninal);
         } else {
+            Double getprice = Double.valueOf(nomninal);
+            getprice = getprice/100;
+/*
             Format format = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
             Double getprice = Double.valueOf(nomninal);
             getprice = getprice/100;
             String formattedString = format.format(getprice);
-            text.setText(sp.getSetting()[4]+formattedString.replace("₹",""));
+            text.setText(sp.getSetting()[0]+formattedString.replace("₹",""));
 
-           // Double getprice = Double.valueOf(nomninal);
-           // DecimalFormat formatter = new DecimalFormat("#,###.##");
-           // String formattedString = formatter.format(getprice);
-           // text.setText(sp.getSetting()[4] + formattedString.replace(",",","));
+ */
+
+
+            Locale locale = new Locale("en","IN");
+            DecimalFormat decimalFormat = (DecimalFormat) DecimalFormat.getCurrencyInstance(locale);
+            DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(locale);
+            dfs.setCurrencySymbol("\u20B9");
+            decimalFormat.setDecimalFormatSymbols(dfs);
+            text.setText(decimalFormat.format(getprice));
+
+            //Double getprice = Double.valueOf(nomninal);
+            //DecimalFormat formatter = new DecimalFormat("#,###,##");
+            //String formattedString = formatter.format(getprice);
+            //text.setText(sp.getSetting()[0] + formattedString.replace(",","."));
         }
-
-
     }
+
 
 }

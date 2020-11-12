@@ -5,9 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-/**
- * Created by Ourdevelops Team on 12/01/2019.
- */
+
 
 public class SettingsModel implements Serializable {
     @Expose
